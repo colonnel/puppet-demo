@@ -1,0 +1,14 @@
+#classes:
+#          - ntp
+ntp::restrict:
+          - restrict default kod nomodify notrap nopeer noquery
+          - restrict -6 default kod nomodify notrap nopeer noquery
+          - restrict 127.0.0.1
+          - restrict -6 ::1
+ntp::service_ensure: running
+ntp::service_enable: true
+ntp::servers:
+          - 0.pool.ntp.org iburst burst
+          - 1.pool.ntp.org iburst burst
+          - 2.pool.ntp.org iburst burst
+          - 3.pool.ntp.org iburst burst

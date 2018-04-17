@@ -1,0 +1,19 @@
+---
+jenkins::homedir: '/var/lib/jenkins'
+jenkins::java_args: '-Xms1g -Xmx1g -XX:MaxPermSize=256m'
+
+jenkins::version: 'installed'
+jenkins::user: 'jenkins'
+
+jenkins::http_listen_address: '0.0.0.0'
+jenkins::http_port: 8080
+
+jenkins::enable_access_log: 'no'
+jenkins::debug: 5
+
+jenkins::handler_max: 100
+jenkins::handler_idle: 20
+
+jenkins::enable_https: true
+jenkins::https_port: 8081
+jenkins::https_listen_address: '0.0.0.0'

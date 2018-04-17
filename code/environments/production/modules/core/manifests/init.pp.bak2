@@ -1,0 +1,20 @@
+class core {
+ class { '::mysql::server':
+    root_password           => '123',
+    remove_default_accounts => true,
+  }
+
+ mysql::db { 'app_db':
+  user => 'dbuser',
+  password => '123',
+  host => '%',
+  }
+ file {'/etc/mysql/my.cnf':
+   source	=> 'puppet:///modules/core/my.cnf.core',
+   owner	=>'root',
+   group	=>'root',
+   mode		=>'0644',
+   require	=> Package['mysql'],
+   notify	=> Service['mysql'],
+ }
+}

@@ -1,0 +1,12 @@
+HOSTS:
+  scientific-7-x64:
+    roles:
+      - agent
+      - default
+    platform: el-7-x86_64
+    box: gutocarvalho/scientific7x64puppet5
+    hypervisor: vagrant
+    vagrant_memsize: 2600
+
+CONFIG:
+  type: aio
